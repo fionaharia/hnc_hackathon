@@ -1,75 +1,55 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import CssBaseline from '@mui/material/CssBaseline';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
-import SpatialTrackingIcon from '@mui/icons-material/SpatialTracking';
-import LeaderboardIcon from '@mui/icons-material/Leaderboard';
-import ChatIcon from '@mui/icons-material/Chat';
+import React from "react";
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 import ExtensionIcon from '@mui/icons-material/Extension';
+import SpatialTrackingIcon from '@mui/icons-material/SpatialTracking';
+import MarkUnreadChatAltIcon from '@mui/icons-material/MarkUnreadChatAlt';
+import Person2Icon from '@mui/icons-material/Person2';
+import LeaderboardIcon from '@mui/icons-material/Leaderboard';
 
-const drawerWidth = 240;
+export const LeftBar = () => {
+  const navItems = [
+    { text: "LingoLadder", icon: null },
+    { text: "Lessons", icon: <MenuBookIcon /> },
+    { text: "Puzzles", icon: <ExtensionIcon /> },
+    { text: "Audio", icon: <SpatialTrackingIcon /> },
+    { text: "Chat", icon: <MarkUnreadChatAltIcon /> },
+    { text: "Profile", icon: <Person2Icon /> },
+    { text: "LeaderBoard", icon: <LeaderboardIcon /> }
+  ];
 
-const icons = [<LocalLibraryIcon />,<ExtensionIcon/>, <SpatialTrackingIcon />, <LeaderboardIcon />, <ChatIcon />];
-
-export default function LeftBar() {
   return (
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <AppBar
-        position="fixed"
-        sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
+    <div>
+      <button
+        data-drawer-target="default-sidebar"
+        data-drawer-toggle="default-sidebar"
+        aria-controls="default-sidebar"
+        type="button"
+        className="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
       >
-        <Toolbar>
-          <Typography variant="h6" noWrap component="div"  style={{ textAlign: 'center' }}>
-            LingoLadder
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Drawer
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          '& .MuiDrawer-paper': {
-            width: drawerWidth,
-            boxSizing: 'border-box',
-          },
-        }}
-        variant="permanent"
-        anchor="left"
+        <span className="sr-only">Open sidebar</span>
+      </button>
+
+      <aside
+        id="default-sidebar"
+        className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+        aria-label="Sidebar"
       >
-        <Toolbar />
-        <Divider />
-      
-    <List>
-      {['Lessons', 'Puzzles', 'Audio Lessons', 'LeaderBoard', 'Chat'].map((text, index) => (
-        <ListItem key={text} disablePadding>
-          <ListItemButton>
-            <ListItemIcon key={text}>
-              {icons[index]}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItemButton>
-        </ListItem>
-      ))}
-    </List> 
-       <Divider />
-      </Drawer>
-      <Box
-        component="main"
-        sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
-      >
-        <Toolbar />
-      </Box>
-    </Box>
+        <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+          <ul className="space-y-2 font-medium">
+            {navItems.map((item, index) => (
+              <li key={index}>
+                <a
+                  href="#"
+                  className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                >
+                  {item.icon && <span className="mr-3">{item.icon}</span>}
+                  <span className="flex-1 ms-3 whitespace-nowrap">{item.text}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </aside>
+    </div>
   );
-}
+};

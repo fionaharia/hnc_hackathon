@@ -1,4 +1,3 @@
-import React from 'react' 
 import Language from '../data/Language'; 
 
 const FlagCard = () => {

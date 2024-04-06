@@ -4,7 +4,7 @@ import BoltIcon from '@mui/icons-material/Bolt';
 
 const LoadingBar = () => {
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+    <Box sx={{display: 'flex', alignItems: 'center' }}>
       <IconButton sx={{ marginRight: '10px' }}>
         <BoltIcon />
       </IconButton>
