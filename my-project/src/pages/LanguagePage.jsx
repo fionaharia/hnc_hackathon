@@ -39,10 +39,12 @@ const card = (
   </React.Fragment>
 );
 
-export default function OutlinedCard() {
+function LanguagePage() {
   return (
     <Box sx={{ minWidth: 275 }}>
       <Card variant="outlined">{card}</Card>
     </Box>
   );
 }
+
+export default LanguagePage

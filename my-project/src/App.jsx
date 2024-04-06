@@ -1,6 +1,6 @@
 import './App.css'
 import {Routes,Route, } from 'react-router-dom'
-import { LanguagePage } from './pages/LanguagePage'
+import LanguagePage from './pages/LanguagePage';
 import { HomePage } from './pages/HomePage'
 import { LeaderboardPage } from './pages/LeaderboardPage'
 import { ProfilePage } from './pages/ProfilePage'
