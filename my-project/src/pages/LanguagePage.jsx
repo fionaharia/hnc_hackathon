@@ -1,9 +1,10 @@
 import React from 'react'
+import FlagCard from '../components/FlagCard'
 
  const LanguagePage = () => {
   return (
-    <div class="bg-blue-950 h-screen">
-      
+    <div className="bg-blue-950 h-screen">
+      <FlagCard />
     </div>
   )
 }

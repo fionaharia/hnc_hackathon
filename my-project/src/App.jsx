@@ -5,7 +5,7 @@ import { HomePage } from './pages/HomePage'
 import { LeaderboardPage } from './pages/LeaderboardPage'
 import { ProfilePage } from './pages/ProfilePage'
 import { PuzzlePage } from './pages/PuzzlePage'
-import { LoginPage } from './pages/LoginPage'
+import  LoginPage  from './pages/LoginPage'
 import { AudioPage } from './pages/AudioPage'
 import { ChatPage } from './pages/ChatPage'
 
