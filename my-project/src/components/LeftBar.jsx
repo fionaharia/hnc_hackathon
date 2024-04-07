@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import ExtensionIcon from '@mui/icons-material/Extension';
 import SpatialTrackingIcon from '@mui/icons-material/SpatialTracking';
@@ -8,13 +9,12 @@ import LeaderboardIcon from '@mui/icons-material/Leaderboard';
 
 export const LeftBar = () => {
   const navItems = [
-    { text: "LingoLadder", icon: null },
-    { text: "Lessons", icon: <MenuBookIcon /> },
-    { text: "Puzzles", icon: <ExtensionIcon /> },
-    { text: "Audio", icon: <SpatialTrackingIcon /> },
-    { text: "Chat", icon: <MarkUnreadChatAltIcon /> },
-    { text: "Profile", icon: <Person2Icon /> },
-    { text: "LeaderBoard", icon: <LeaderboardIcon /> }
+    { text: "Lessons", icon: <MenuBookIcon />, path: "/quiz" },
+    { text: "Puzzles", icon: <ExtensionIcon />, path: "/puzzles" },
+    { text: "Audio", icon: <SpatialTrackingIcon />, path: "/audio" },
+    { text: "Chat", icon: <MarkUnreadChatAltIcon />, path: "/chat" },
+    { text: "Profile", icon: <Person2Icon />, path: "/profile" },
+    { text: "LeaderBoard", icon: <LeaderboardIcon />, path: "/leaderboard" }
   ];
 
   return (
@@ -38,13 +38,13 @@ export const LeftBar = () => {
           <ul className="space-y-2 font-medium">
             {navItems.map((item, index) => (
               <li key={index}>
-                <a
-                  href="#"
+                <Link
+                  to={item.path}
                   className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   {item.icon && <span className="mr-3">{item.icon}</span>}
                   <span className="flex-1 ms-3 whitespace-nowrap">{item.text}</span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
