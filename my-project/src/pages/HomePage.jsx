@@ -7,8 +7,11 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import { useNavigate } from 'react-router-dom';
 
-const CardComponent = ({ icon, title }) => (
-  <div className="flex flex-col items-center justify-center bg-yellow-500 rounded-xl shadow-md mx-4 my-4 text-white hover:bg-blue-600 transition duration-300 w-48 h-48 p-6">
+const CardComponent = ({ icon, title, onClick }) => (
+  <div
+    className="flex flex-col items-center justify-center bg-yellow-500 rounded-xl shadow-md mx-4 my-4 text-white hover:bg-blue-600 transition duration-300 w-48 h-48 p-6 cursor-pointer"
+    onClick={onClick}
+  >
     {icon}
     <h2 className="text-xl font-semibold mt-4 mb-2">{title}</h2>
   </div>
